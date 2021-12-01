@@ -12,9 +12,21 @@ namespace NaturalGasAnalysis
     using System;
     using System.Collections.Generic;
     
-    public partial class NaruralGasPrice
+    public partial class NaruralGasPrice: NaturalGasPredict
     {
-        public System.DateTime Date { get; set; }
-        public float Price { get; set; }
+        private Nullable<float> gasPrice;
+        public Nullable<float> GasPrice
+        {
+            get
+            {
+                return gasPrice;
+            }
+            set
+            {
+                gasPrice = value;
+                Price = (float)value;
+            }
+        }
+        public int NaturalGasPriceId { get; set; }
     }
 }

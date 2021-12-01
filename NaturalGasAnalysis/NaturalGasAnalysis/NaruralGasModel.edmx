@@ -7,10 +7,11 @@
     <Schema Namespace="NaturalGasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="NaruralGasPrice">
           <Key>
-            <PropertyRef Name="Date" />
+            <PropertyRef Name="NaturalGasPriceId" />
           </Key>
+          <Property Name="GasPrice" Type="real" />
+          <Property Name="NaturalGasPriceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Date" Type="date" Nullable="false" />
-          <Property Name="Price" Type="real" Nullable="false" />
         </EntityType>
         <EntityContainer Name="NaturalGasModelStoreContainer">
           <EntitySet Name="NaruralGasPrice" EntityType="Self.NaruralGasPrice" Schema="dbo" store:Type="Tables" />
@@ -24,10 +25,11 @@
         </EntityContainer>
         <EntityType Name="NaruralGasPrice">
           <Key>
-            <PropertyRef Name="Date" />
+            <PropertyRef Name="NaturalGasPriceId" />
           </Key>
+          <Property Name="GasPrice" Type="Single" />
+          <Property Name="NaturalGasPriceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Price" Type="Single" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -38,8 +40,9 @@
           <EntitySetMapping Name="NaruralGasPrice">
             <EntityTypeMapping TypeName="NaturalGasModel.NaruralGasPrice">
               <MappingFragment StoreEntitySet="NaruralGasPrice">
-                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="NaturalGasPriceId" ColumnName="NaturalGasPriceId" />
+                <ScalarProperty Name="GasPrice" ColumnName="GasPrice" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

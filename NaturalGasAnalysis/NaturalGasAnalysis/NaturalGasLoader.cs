@@ -10,7 +10,7 @@ namespace NaturalGasAnalysis
 {
     public static class NaturalGasLoader
     {
-        public const string NaturalGasUri = @"https://pkgstore.datahub.io/core/natural-gas/daily_csv_preview/data/2c769d617c9d5e0699284c95ef9aa077/daily_csv_preview.json";
+        public const string NaturalGasUri = @"https://pkgstore.datahub.io/core/natural-gas/daily_json/data/2e630ca50c39a1a3cf6c3aff57a1b132/daily_json.json";
 
         public static string GetNaturalGasObject()
         {

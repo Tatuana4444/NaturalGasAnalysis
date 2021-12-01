@@ -29,43 +29,88 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.runButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gasDataGridView = new System.Windows.Forms.DataGridView();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.naruralGasPriceBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.naturalGasDataSet = new NaturalGasAnalysis.NaturalGasDataSet();
             this.naruralGasPriceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GasChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chartViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.naruralGasPriceTableAdapter = new NaturalGasAnalysis.NaturalGasDataSetTableAdapters.NaruralGasPriceTableAdapter();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.realDataCheckBox = new System.Windows.Forms.CheckBox();
+            this.upperBoundCheckBox = new System.Windows.Forms.CheckBox();
+            this.forecastCheckBox = new System.Windows.Forms.CheckBox();
+            this.lowerBoundCheckBox = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.gasDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.naruralGasPriceBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.naturalGasDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.naruralGasPriceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GasChart)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // runButton
             // 
-            this.runButton.Location = new System.Drawing.Point(122, 43);
+            this.runButton.Location = new System.Drawing.Point(45, 462);
             this.runButton.Name = "runButton";
-            this.runButton.Size = new System.Drawing.Size(570, 49);
+            this.runButton.Size = new System.Drawing.Size(200, 49);
             this.runButton.TabIndex = 0;
-            this.runButton.Text = "button1";
+            this.runButton.Text = "Show";
             this.runButton.UseVisualStyleBackColor = true;
             this.runButton.Click += new System.EventHandler(this.runButton_Click);
             // 
-            // dataGridView1
+            // gasDataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dateDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.naruralGasPriceBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(122, 122);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(570, 316);
-            this.dataGridView1.TabIndex = 1;
+            this.gasDataGridView.AutoGenerateColumns = false;
+            this.gasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.priceDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1});
+            this.gasDataGridView.DataSource = this.naruralGasPriceBindingSource1;
+            this.gasDataGridView.Location = new System.Drawing.Point(372, 122);
+            this.gasDataGridView.Name = "gasDataGridView";
+            this.gasDataGridView.RowHeadersWidth = 51;
+            this.gasDataGridView.RowTemplate.Height = 24;
+            this.gasDataGridView.Size = new System.Drawing.Size(853, 316);
+            this.gasDataGridView.TabIndex = 1;
+            this.gasDataGridView.Visible = false;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // naruralGasPriceBindingSource1
+            // 
+            this.naruralGasPriceBindingSource1.DataMember = "NaruralGasPrice";
+            this.naruralGasPriceBindingSource1.DataSource = this.naturalGasDataSet;
             // 
             // naturalGasDataSet
             // 
@@ -75,51 +120,231 @@
             // naruralGasPriceBindingSource
             // 
             this.naruralGasPriceBindingSource.DataMember = "NaruralGasPrice";
-            this.naruralGasPriceBindingSource.DataSource = this.naturalGasDataSet;
+            // 
+            // GasChart
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.GasChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.GasChart.Legends.Add(legend3);
+            this.GasChart.Location = new System.Drawing.Point(297, 43);
+            this.GasChart.Name = "GasChart";
+            series9.BorderWidth = 2;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Legend = "Legend1";
+            series9.Name = "Real Price";
+            series10.BorderWidth = 2;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Legend = "Legend1";
+            series10.Name = "Upper Bound Price";
+            series11.BorderWidth = 2;
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series11.Legend = "Legend1";
+            series11.Name = "Foreacast Price";
+            series12.BorderWidth = 2;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series12.Legend = "Legend1";
+            series12.Name = "Lower Bound Price";
+            this.GasChart.Series.Add(series9);
+            this.GasChart.Series.Add(series10);
+            this.GasChart.Series.Add(series11);
+            this.GasChart.Series.Add(series12);
+            this.GasChart.Size = new System.Drawing.Size(1097, 484);
+            this.GasChart.TabIndex = 2;
+            this.GasChart.Text = "GasChart";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dataToolStripMenuItem,
+            this.viewToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1406, 28);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // dataToolStripMenuItem
+            // 
+            this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem});
+            this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.dataToolStripMenuItem.Text = "Data";
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tableViewToolStripMenuItem,
+            this.chartViewToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // tableViewToolStripMenuItem
+            // 
+            this.tableViewToolStripMenuItem.Name = "tableViewToolStripMenuItem";
+            this.tableViewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tableViewToolStripMenuItem.Text = "Table view";
+            this.tableViewToolStripMenuItem.Click += new System.EventHandler(this.tableViewToolStripMenuItem_Click);
+            // 
+            // chartViewToolStripMenuItem
+            // 
+            this.chartViewToolStripMenuItem.Checked = true;
+            this.chartViewToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chartViewToolStripMenuItem.Name = "chartViewToolStripMenuItem";
+            this.chartViewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.chartViewToolStripMenuItem.Text = "Chart view";
+            this.chartViewToolStripMenuItem.Click += new System.EventHandler(this.chartViewToolStripMenuItem_Click);
+            // 
+            // startDateTimePicker
+            // 
+            this.startDateTimePicker.Location = new System.Drawing.Point(45, 74);
+            this.startDateTimePicker.Name = "startDateTimePicker";
+            this.startDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.startDateTimePicker.TabIndex = 4;
+            // 
+            // endDateTimePicker
+            // 
+            this.endDateTimePicker.Location = new System.Drawing.Point(45, 139);
+            this.endDateTimePicker.Name = "endDateTimePicker";
+            this.endDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.endDateTimePicker.TabIndex = 5;
             // 
             // naruralGasPriceTableAdapter
             // 
             this.naruralGasPriceTableAdapter.ClearBeforeFill = true;
             // 
-            // dateDataGridViewTextBoxColumn
+            // realDataCheckBox
             // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.realDataCheckBox.AutoSize = true;
+            this.realDataCheckBox.Location = new System.Drawing.Point(45, 205);
+            this.realDataCheckBox.Name = "realDataCheckBox";
+            this.realDataCheckBox.Size = new System.Drawing.Size(95, 21);
+            this.realDataCheckBox.TabIndex = 6;
+            this.realDataCheckBox.Text = "Real Price";
+            this.realDataCheckBox.UseVisualStyleBackColor = true;
             // 
-            // priceDataGridViewTextBoxColumn
+            // upperBoundCheckBox
             // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.upperBoundCheckBox.AutoSize = true;
+            this.upperBoundCheckBox.Location = new System.Drawing.Point(45, 249);
+            this.upperBoundCheckBox.Name = "upperBoundCheckBox";
+            this.upperBoundCheckBox.Size = new System.Drawing.Size(150, 21);
+            this.upperBoundCheckBox.TabIndex = 7;
+            this.upperBoundCheckBox.Text = "Upper Bound Price";
+            this.upperBoundCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // forecastCheckBox
+            // 
+            this.forecastCheckBox.AutoSize = true;
+            this.forecastCheckBox.Location = new System.Drawing.Point(45, 293);
+            this.forecastCheckBox.Name = "forecastCheckBox";
+            this.forecastCheckBox.Size = new System.Drawing.Size(121, 21);
+            this.forecastCheckBox.TabIndex = 8;
+            this.forecastCheckBox.Text = "Forecast Price";
+            this.forecastCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // lowerBoundCheckBox
+            // 
+            this.lowerBoundCheckBox.AutoSize = true;
+            this.lowerBoundCheckBox.Location = new System.Drawing.Point(45, 340);
+            this.lowerBoundCheckBox.Name = "lowerBoundCheckBox";
+            this.lowerBoundCheckBox.Size = new System.Drawing.Size(149, 21);
+            this.lowerBoundCheckBox.TabIndex = 9;
+            this.lowerBoundCheckBox.Text = "Lower Bound Price";
+            this.lowerBoundCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(42, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "From";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(42, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 17);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "To";
             // 
             // NaturalGasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1406, 561);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lowerBoundCheckBox);
+            this.Controls.Add(this.forecastCheckBox);
+            this.Controls.Add(this.upperBoundCheckBox);
+            this.Controls.Add(this.realDataCheckBox);
+            this.Controls.Add(this.endDateTimePicker);
+            this.Controls.Add(this.startDateTimePicker);
+            this.Controls.Add(this.GasChart);
+            this.Controls.Add(this.gasDataGridView);
             this.Controls.Add(this.runButton);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "NaturalGasForm";
             this.Text = "NaturalGasForm";
             this.Load += new System.EventHandler(this.NaturalGasForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gasDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.naruralGasPriceBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.naturalGasDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.naruralGasPriceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GasChart)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button runButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private NaturalGasDataSet naturalGasDataSet;
+        private System.Windows.Forms.DataGridView gasDataGridView;
+        private System.Windows.Forms.DataVisualization.Charting.Chart GasChart;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tableViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chartViewToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker startDateTimePicker;
+        private System.Windows.Forms.DateTimePicker endDateTimePicker;
         private System.Windows.Forms.BindingSource naruralGasPriceBindingSource;
-        private NaturalGasDataSetTableAdapters.NaruralGasPriceTableAdapter naruralGasPriceTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gasPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private NaturalGasDataSet naturalGasDataSet;
+        private System.Windows.Forms.BindingSource naruralGasPriceBindingSource1;
+        private NaturalGasDataSetTableAdapters.NaruralGasPriceTableAdapter naruralGasPriceTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn naturalGasPriceIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.CheckBox realDataCheckBox;
+        private System.Windows.Forms.CheckBox upperBoundCheckBox;
+        private System.Windows.Forms.CheckBox forecastCheckBox;
+        private System.Windows.Forms.CheckBox lowerBoundCheckBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
