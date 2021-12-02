@@ -10,9 +10,7 @@ namespace NaturalGasAnalysis
 {
     public static class NaturalGasLoader
     {
-        public const string NaturalGasUri = @"https://pkgstore.datahub.io/core/natural-gas/daily_json/data/2e630ca50c39a1a3cf6c3aff57a1b132/daily_json.json";
-
-        public static string GetNaturalGasObject()
+        public static string GetNaturalGasObject(string NaturalGasUri)
         {
             HttpClient httpClient = new HttpClient();
 
@@ -29,6 +27,10 @@ namespace NaturalGasAnalysis
                 {
                     throw new HtmlWebException("Can't load informtion");
                 }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
             finally
             {

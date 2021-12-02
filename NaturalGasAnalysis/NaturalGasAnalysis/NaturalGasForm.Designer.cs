@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.runButton = new System.Windows.Forms.Button();
             this.gasDataGridView = new System.Windows.Forms.DataGridView();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,8 +56,8 @@
             this.upperBoundCheckBox = new System.Windows.Forms.CheckBox();
             this.forecastCheckBox = new System.Windows.Forms.CheckBox();
             this.lowerBoundCheckBox = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.toLabel = new System.Windows.Forms.Label();
+            this.fromLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.naruralGasPriceBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.naturalGasDataSet)).BeginInit();
@@ -85,11 +85,11 @@
             this.priceDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn1});
             this.gasDataGridView.DataSource = this.naruralGasPriceBindingSource1;
-            this.gasDataGridView.Location = new System.Drawing.Point(372, 122);
+            this.gasDataGridView.Location = new System.Drawing.Point(242, 68);
             this.gasDataGridView.Name = "gasDataGridView";
             this.gasDataGridView.RowHeadersWidth = 51;
             this.gasDataGridView.RowTemplate.Height = 24;
-            this.gasDataGridView.Size = new System.Drawing.Size(853, 316);
+            this.gasDataGridView.Size = new System.Drawing.Size(907, 392);
             this.gasDataGridView.TabIndex = 1;
             this.gasDataGridView.Visible = false;
             // 
@@ -123,36 +123,36 @@
             // 
             // GasChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.GasChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.GasChart.Legends.Add(legend3);
-            this.GasChart.Location = new System.Drawing.Point(297, 43);
+            chartArea1.Name = "ChartArea1";
+            this.GasChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.GasChart.Legends.Add(legend1);
+            this.GasChart.Location = new System.Drawing.Point(262, 50);
             this.GasChart.Name = "GasChart";
-            series9.BorderWidth = 2;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.Legend = "Legend1";
-            series9.Name = "Real Price";
-            series10.BorderWidth = 2;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.Legend = "Legend1";
-            series10.Name = "Upper Bound Price";
-            series11.BorderWidth = 2;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series11.Legend = "Legend1";
-            series11.Name = "Foreacast Price";
-            series12.BorderWidth = 2;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series12.Legend = "Legend1";
-            series12.Name = "Lower Bound Price";
-            this.GasChart.Series.Add(series9);
-            this.GasChart.Series.Add(series10);
-            this.GasChart.Series.Add(series11);
-            this.GasChart.Series.Add(series12);
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Real Price";
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Upper Bound Price";
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Foreacast Price";
+            series4.BorderWidth = 2;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Legend = "Legend1";
+            series4.Name = "Lower Bound Price";
+            this.GasChart.Series.Add(series1);
+            this.GasChart.Series.Add(series2);
+            this.GasChart.Series.Add(series3);
+            this.GasChart.Series.Add(series4);
             this.GasChart.Size = new System.Drawing.Size(1097, 484);
             this.GasChart.TabIndex = 2;
             this.GasChart.Text = "GasChart";
@@ -196,7 +196,7 @@
             // tableViewToolStripMenuItem
             // 
             this.tableViewToolStripMenuItem.Name = "tableViewToolStripMenuItem";
-            this.tableViewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tableViewToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.tableViewToolStripMenuItem.Text = "Table view";
             this.tableViewToolStripMenuItem.Click += new System.EventHandler(this.tableViewToolStripMenuItem_Click);
             // 
@@ -205,7 +205,7 @@
             this.chartViewToolStripMenuItem.Checked = true;
             this.chartViewToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chartViewToolStripMenuItem.Name = "chartViewToolStripMenuItem";
-            this.chartViewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.chartViewToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.chartViewToolStripMenuItem.Text = "Chart view";
             this.chartViewToolStripMenuItem.Click += new System.EventHandler(this.chartViewToolStripMenuItem_Click);
             // 
@@ -267,31 +267,31 @@
             this.lowerBoundCheckBox.Text = "Lower Bound Price";
             this.lowerBoundCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // toLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "From";
+            this.toLabel.AutoSize = true;
+            this.toLabel.Location = new System.Drawing.Point(42, 54);
+            this.toLabel.Name = "toLabel";
+            this.toLabel.Size = new System.Drawing.Size(40, 17);
+            this.toLabel.TabIndex = 10;
+            this.toLabel.Text = "From";
             // 
-            // label2
+            // fromLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 17);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "To";
+            this.fromLabel.AutoSize = true;
+            this.fromLabel.Location = new System.Drawing.Point(42, 119);
+            this.fromLabel.Name = "fromLabel";
+            this.fromLabel.Size = new System.Drawing.Size(25, 17);
+            this.fromLabel.TabIndex = 11;
+            this.fromLabel.Text = "To";
             // 
             // NaturalGasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 561);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.fromLabel);
+            this.Controls.Add(this.toLabel);
             this.Controls.Add(this.lowerBoundCheckBox);
             this.Controls.Add(this.forecastCheckBox);
             this.Controls.Add(this.upperBoundCheckBox);
@@ -344,7 +344,7 @@
         private System.Windows.Forms.CheckBox upperBoundCheckBox;
         private System.Windows.Forms.CheckBox forecastCheckBox;
         private System.Windows.Forms.CheckBox lowerBoundCheckBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label toLabel;
+        private System.Windows.Forms.Label fromLabel;
     }
 }

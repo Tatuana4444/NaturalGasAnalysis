@@ -18,7 +18,7 @@ namespace NaturalGasAnalysis
             IDataView dataView = mlContext.Data.LoadFromEnumerable(inMemoryCollection);
             var forecastingPipeline = mlContext.Forecasting.ForecastBySsa(
                 outputColumnName: nameof(NatureGasPricePrediction.ForecastedPrice),
-                inputColumnName: nameof(NaturalGasPredict.Price),
+                inputColumnName: nameof(NaturalGasPredict.GasPrice),
                 windowSize: 7,
                 seriesLength: 30,
                 trainSize: 365,

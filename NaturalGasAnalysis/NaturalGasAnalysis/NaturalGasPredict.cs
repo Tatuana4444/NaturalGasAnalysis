@@ -8,7 +8,7 @@ namespace NaturalGasAnalysis
 {
     public class NaturalGasPredict
     {
-        public float Price { get; set; }
+        public float GasPrice { get; set; }
         public System.DateTime Date { get; set; }
     }
 }

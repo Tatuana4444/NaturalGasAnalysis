@@ -14,17 +14,17 @@ namespace NaturalGasAnalysis
     
     public partial class NaruralGasPrice: NaturalGasPredict
     {
-        private Nullable<float> gasPrice;
-        public Nullable<float> GasPrice
+        private Nullable<float> price;
+        public Nullable<float> Price
         {
             get
             {
-                return gasPrice;
+                return price;
             }
             set
             {
-                gasPrice = value;
-                Price = (float)value;
+                price = value;
+                GasPrice = value == null ? 0 : (float)value;
             }
         }
         public int NaturalGasPriceId { get; set; }

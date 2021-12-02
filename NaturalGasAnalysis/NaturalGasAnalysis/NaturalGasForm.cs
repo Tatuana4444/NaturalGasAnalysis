@@ -2,6 +2,7 @@
 using Microsoft.ML.Transforms.TimeSeries;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text.Json;
@@ -53,18 +54,13 @@ namespace NaturalGasAnalysis
                     model = Prediction.Train(mlContext, db.NaruralGasPrice.Take(2000).ToList());
                 }
 
-                List<NaturalGasPredict> realDate = db.NaruralGasPrice.Where(s => s.Date >= startDate && s.Date <= endDate).Select(s=> new NaturalGasPredict()
-                {
-                    Date = s.Date,
-                    Price = s.GasPrice == null ? 0 : (float)s.GasPrice
-                }).ToList();
-                IDataView dataView = mlContext.Data.LoadFromEnumerable(realDate);
+                List<NaruralGasPrice> realDate = db.NaruralGasPrice.Where(s => s.Date >= startDate && s.Date <= endDate).ToList();
 
                 for (int i = 0; i < realDate.Count; i++)
                 {
                     if (realDataCheckBox.Checked)
                     {
-                        GasChart.Series[0].Points.AddXY(realDate[i].Date, realDate[i].Price);
+                        GasChart.Series[0].Points.AddXY(realDate[i].Date, realDate[i].GasPrice);
                     }
 
                     var forecast = Prediction.Forecast(mlContext, model, realDate[i]);
@@ -114,7 +110,7 @@ namespace NaturalGasAnalysis
 
         private NaruralGasPrice[] GetNaruralGasPrices()
         {
-            string naturalGasData = NaturalGasLoader.GetNaturalGasObject();
+            string naturalGasData = NaturalGasLoader.GetNaturalGasObject(ConfigurationManager.ConnectionStrings["NaturalGasUri"].ConnectionString);
            return JsonSerializer.Deserialize<NaruralGasPrice[]>(naturalGasData.ToString());
         }
 
@@ -146,11 +142,21 @@ namespace NaturalGasAnalysis
 
         private void UpdateDateTimePicker()
         {
-            DateTime minDate, maxDate;
+            
+            DateTime minDate = DateTime.Now, maxDate = DateTime.Now;
             using (NaturalGasEntities db = new NaturalGasEntities())
             {
-                minDate = db.NaruralGasPrice.Min(s => s.Date);
-                maxDate = db.NaruralGasPrice.Max(s => s.Date);
+                if (db.NaruralGasPrice.Count() > 0) 
+                {
+                    minDate = db.NaruralGasPrice.Min(s => s.Date);
+                    maxDate = db.NaruralGasPrice.Max(s => s.Date);
+                    runButton.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("There are no data!");
+                    runButton.Enabled = false;
+                }
             }
 
             startDateTimePicker.MinDate = minDate;
@@ -172,6 +178,8 @@ namespace NaturalGasAnalysis
             forecastCheckBox.Visible = false;
             lowerBoundCheckBox.Visible = false;
             runButton.Visible = false;
+            toLabel.Visible = false;
+            fromLabel.Visible = false;
             NaturalGasForm_Load(sender, e);
         }
 
@@ -188,6 +196,8 @@ namespace NaturalGasAnalysis
             forecastCheckBox.Visible = true;
             lowerBoundCheckBox.Visible = true;
             runButton.Visible = true;
+            toLabel.Visible = true;
+            fromLabel.Visible = true;
             runButton_Click(sender, e);
         }
     }
